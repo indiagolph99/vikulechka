@@ -1,0 +1,35 @@
+{
+  "name": "vikulechka",
+  "version": "1.0.0",
+  "description": "Генератор файлов / скрипт запускатель",
+  "main": "index.js",
+  "scripts": {
+    "build": "electron-builder --windows",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "package-win": "electron-packager . my-electron-app --platform=win32 --arch=x64 --out=dist --overwrite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/indiagolph99/vikulechka.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/indiagolph99/vikulechka/issues"
+  },
+  "homepage": "https://github.com/indiagolph99/vikulechka#readme",
+  "devDependencies": {
+    "electron": "^38.2.1",
+    "electron-builder": "^26.0.12",
+    "electron-packager": "^17.1.2"
+  },
+  "build": {
+    "appId": "vikulechka",
+    "win": {
+      "target": "nsis",
+      "icon": "build/barry.ico"
+    }
+  }
+}
