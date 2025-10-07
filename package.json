@@ -1,35 +1,30 @@
 {
   "name": "vikulechka",
-  "version": "1.0.0",
-  "description": "Генератор файлов / скрипт запускатель",
-  "main": "index.js",
+  "version": "0.0.1",
+  "description": "Генератор платежек & запускатель скриптов",
+  "main": "main/main.js",
   "scripts": {
-    "build": "electron-builder --windows",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron .",
-    "package-win": "electron-packager . my-electron-app --platform=win32 --arch=x64 --out=dist --overwrite"
+    "dev": "node scripts/dev-server.js",
+    "build": "node scripts/build.js && electron-builder",
+    "build:win": "node scripts/build.js && electron-builder --win",
+    "build:mac": "node scripts/build.js && electron-builder --mac",
+    "build:linux": "node scripts/build.js && electron-builder --linux"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/indiagolph99/vikulechka.git"
+  "repository": "https://github.com/deluze/electron-vue-template",
+  "author": {
+    "name": "Deluze",
+    "url": "https://github.com/Deluze"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/indiagolph99/vikulechka/issues"
-  },
-  "homepage": "https://github.com/indiagolph99/vikulechka#readme",
   "devDependencies": {
-    "electron": "^38.2.1",
-    "electron-builder": "^26.0.12",
-    "electron-packager": "^17.1.2"
+    "@vitejs/plugin-vue": "^4.4.1",
+    "chalk": "^4.1.2",
+    "chokidar": "^3.5.3",
+    "electron": "^32.1.2",
+    "electron-builder": "^25.1.6",
+    "typescript": "^5.2.2",
+    "vite": "^4.5.0"
   },
-  "build": {
-    "appId": "vikulechka",
-    "win": {
-      "target": "nsis",
-      "icon": "build/barry.ico"
-    }
+  "dependencies": {
+    "vue": "^3.3.8"
   }
 }
